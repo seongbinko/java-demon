@@ -1,0 +1,7 @@
+# Project exclude paths
+/bin/
+.idea
+.settings
+.classpath
+.project
+*.iml
