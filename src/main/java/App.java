@@ -69,14 +69,17 @@ public class App {
 							pmst.setString(i, arr[i-1]);
 						}
 					}
-					pmst.executeUpdate();
-					con.commit();
-					pmst.close();
+					pmst.addBatch();
+					
 				} catch (SQLException e) {
 					e.printStackTrace();
 					Log.info("===========================오류발생 rollback===============================");
 					con.rollback();
-				} 
+				} finally {
+					pmst.executeBatch();
+					con.commit();
+					pmst.close();
+				}
 			}
 
 			con.close();
