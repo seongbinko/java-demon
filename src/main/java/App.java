@@ -15,6 +15,8 @@ import java.util.logging.Logger;
 /**
  * <pre>
  * 쉘스크립트를 통해 작업을 DB 인서트 작업을 수행하는 기능
+ *  현재 보다 pmst.addBatch() , pmst.executeBatch(); 를 활용하는 것이 더 효율적이라 생각된다
+ *  StringTokenizer는 구분자를 통한 공백을 제대로 표현 할 수 없다. 중간 부분 끝부분(-1) 등 split은 표현 가능하다. 정확히 구분을 위해서는 split이 낫고 속도적인 측면은 전자가 낫다한다.
  * </pre>
  */
 public class App {
